@@ -10,6 +10,15 @@ function multiply(a, b) {
   return a * b;
 }
 
+
+function calculateAndDisplay(fn) {
+  const a = Number(document.getElementById('a').value);
+  const b = Number(document.getElementById('b').value);
+  document.getElementById('result').textContent = fn(a, b);
+}
+
+
+
 function calculateAndDisplay(fn) {
   const rawA = document.getElementById('a').value;
   const rawB = document.getElementById('b').value;
@@ -30,6 +39,7 @@ function calculateAndDisplay(fn) {
     .addEventListener('click', () => calculateAndDisplay(window[op]));
 });
 
+
 document.getElementById('btn-add')
   .addEventListener('click', () => calculateAndDisplay(add));
 
@@ -38,4 +48,3 @@ document.getElementById('btn-subtract')
 
 document.getElementById('btn-multiply')
   .addEventListener('click', () => calculateAndDisplay(multiply));
-
