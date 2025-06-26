@@ -24,6 +24,12 @@ function calculateAndDisplay(fn) {
   document.getElementById('result').textContent = fn(a, b);
 }
 
+
+['add', 'subtract', 'multiply'].forEach(op => {
+  document.getElementById(`btn-${op}`)
+    .addEventListener('click', () => calculateAndDisplay(window[op]));
+});
+
 document.getElementById('btn-add')
   .addEventListener('click', () => calculateAndDisplay(add));
 
@@ -32,3 +38,4 @@ document.getElementById('btn-subtract')
 
 document.getElementById('btn-multiply')
   .addEventListener('click', () => calculateAndDisplay(multiply));
+
